@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+</head>
+<link rel="stylesheet" href="/stylesheets/formData.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+    <div class="w-full px-10 py-3 flex justify-between bg-zinc-800 text-white items-center">
+        <h3>Resume-Builder</h3>
+        <div class=" flex gap-10 items-center">
+          <a class="text-purple-500 " href="/">Home</a>
+          <a class="text-purple-500 " href="/register">Register</a>
+          <a class="px-3 py-2 bg-purple-700 text-white rounded-lg" href="/login">Login</a>
+        </div>
+    </div>
+    
+    <form action="/edit" method="post">
+        <!-- Personal Information -->
+        <h2><b>Resume Form</b></h2> 
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName"><br><br>
+            
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName"><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+        </fieldset>
+        
+        <!-- Experience -->
+        <fieldset>
+            <legend>Experience</legend>
+            <div id="experience" name="experience" >
+                <div class="expItem">
+                    <label for="expName1" >Company Name:</label>
+                    <input type="text" id="expName1" name="expName1"><br><br>
+                    
+                    <label for="expLocation1">Location:</label>
+                    <input type="text" id="expLocation1" name="expLocation1"><br><br>
+                    
+                    <label for="expDuration1">Duration:</label>
+                    <input type="text" id="expDuration1" name="expDuration1"><br><br>
+                    
+                    <label for="expPosition1">Position:</label>
+                    <input type="text" id="expPosition1" name="expPosition1"><br><br>
+                    
+                    <label for="expDescription1">Description:</label><br>
+                    <textarea id="expDescription1" name="expDescription1" rows="4" cols="50"></textarea><br><br>
+                </div>
+                <!-- Additional expItem fields will be added dynamically -->
+            </div>
+        </fieldset>
+
+        <!-- Skills -->
+        <fieldset>
+            <legend>Skills</legend>
+            <div id="skills">
+                <div class="skillItem" name="skill">
+                    <label for="skillName1">Skill Name:</label>
+                    <input type="text" id="skillName1" name="skillName1"><br><br>
+                    
+                    <label for="skillLevel1">Skill Level:</label>
+                    <input type="text" id="skillLevel1" name="skillLevel1"><br><br>
+                </div>
+                <!-- Additional skillItem fields will be added dynamically -->
+            </div>
+            <button type="button" id="addSkill">Add Skill</button>
+        </fieldset>
+        
+        <!-- Add similar fieldsets for Education, Projects, Interests -->
+        
+      
+
+        <!-- Projects -->
+<fieldset>
+    <legend>Projects</legend>
+    <div id="projects">
+        <div class="projectItem" name="projects">
+            <label for="projectName1">Project Name:</label>
+            <input type="text" id="projectName1" name="projectName1"><br><br>
+            
+            <label for="projectDescription1">Project Description:</label><br>
+            <textarea id="projectDescription1" name="projectDescription1" rows="4" cols="50"></textarea><br><br>
+        </div>
+        <!-- Additional projectItem fields will be added dynamically -->
+    </div>
+    <button type="button" id="addProject">Add Project</button>
+</fieldset>
+
+<button class="Preview" type="submit" name="preview_Button">Preview</button>
+    </form>
+    
+    
+    <script>
+
+        // JavaScript to add additional skill fields dynamically
+        document.getElementById('addSkill').addEventListener('click', function() {
+            var skillsDiv = document.getElementById('skills');
+            var newSkillItem = document.createElement('div');
+            newSkillItem.classList.add('skillItem');
+            var count = skillsDiv.childElementCount + 1;
+            newSkillItem.innerHTML = `
+                <label for="skillName${count}">Skill Name:</label>
+                <input type="text" id="skillName${count}" name="skillName${count}"><br><br>
+                
+                <label for="skillLevel${count}">Skill Level:</label>
+                <input type="text" id="skillLevel${count}" name="skillLevel${count}"><br><br>
+            `;
+            skillsDiv.appendChild(newSkillItem);
+        });
+        // Add prohect section :
+        document.getElementById('addProject').addEventListener('click', function() {
+    var projectsDiv = document.getElementById('projects');
+    var newProjectItem = document.createElement('div');
+    newProjectItem.classList.add('projectItem');
+    var count = projectsDiv.childElementCount + 1;
+    newProjectItem.innerHTML = `
+        <label for="projectName${count}">Project Name:</label>
+        <input type="text" id="projectName${count}" name="projectName${count}"><br><br>
+        
+        <label for="projectDescription${count}">Project Description:</label><br>
+        <textarea id="projectDescription${count}" name="projectDescription${count}" rows="4" cols="50"></textarea><br><br>
+    `;
+    projectsDiv.appendChild(newProjectItem);
+});
+
+        
+    </script>
+</body>
+</html>
