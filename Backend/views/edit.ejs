@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <link rel="stylesheet" href="/stylesheets/formData.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full px-10 py-3 flex justify-between bg-zinc-800 text-white items-center">
+        <h3>Resume-Builder</h3>
+        <div class=" flex gap-10 items-center">
+            <a class="text-purple-500 " href="/">Home</a>
+            <a class="text-purple-500 " href="/register">Register</a>
+            <a class="px-3 py-2 bg-purple-700 text-white rounded-lg" href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="main_container">
+        <form action="/edit" method="post">
+            <div class="container">
+                <div class="inner">
+                    <div class="heading">
+                        <h1>Personal Details</h1>
+                    </div>
+                    <div class="flex_box_1">
+                        <div class="group">
+                            <input required="" type="text" class="input" name="firstName">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>First Name</label>
+                        </div>
+                        <div class="group">
+                            <input required="" type="text" class="input" name="LastName">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Last Name</label>
+                        </div>
+                    </div>
+                    <div class="flex_box_1">
+                        <div class="group">
+                            <input required="" type="email" class="input" name="Email">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email</label>
+                        </div>
+                        <div class="group">
+                            <input required="" type="number" class="input" name="phone">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Phone No</label>
+                        </div>
+                    </div>
+                    <div class="flex_box_1">
+                        <div class="group">
+                            <input required="" type="text" class="input" name="country">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Country</label>
+                        </div>
+                        <div class="group">
+                            <input required="" type="text" class="input" name="city">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>City</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="heading">
+                        <h1>Professional Summary</h1>
+                        <p>
+                            Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills.
+                        </p>
+                        <div class="sentences">
+                            <div class="form">
+                                <textarea rows="4" cols="50" name="summary"  placeholder="Enter Your Details"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="heading">
+                        <h1>Education</h1>
+                        <p>
+                            A varied education on your resume sums up the value that your learning and backgrounds will bring to job
+                        </p>
+                        <div class="sentences">
+                            <div class="form">
+                                <textarea rows="4" cols="50" name="education"  placeholder="Enter Your Details"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="heading">
+                            <h1>Skills</h1>
+                            <p>
+                                Choose 5 important skills that show you fit the position.Make sure they match the key skills mentioned in the job listing.
+                            </p>
+                            <div class="skills-container">
+                                <div class="form skill-form">
+                                  <textarea rows="4" cols="50" name="skills" placeholder="Enter Your Details"></textarea>
+
+
+                                    <button type="button" class="add-skill-button">Add Skill</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Preview" class="custom-button">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addSkillButton = document.querySelector('.add-skill-button');
+            const skillsContainer = document.querySelector('.skills-container');
+            
+            addSkillButton.addEventListener('click', function() {
+                const newSkillForm = document.createElement('div');
+                newSkillForm.classList.add('form', 'skill-form');
+                newSkillForm.innerHTML = `
+                    <textarea rows="4" cols="50" name="skills" placeholder="Enter Your Details"></textarea>
+                    <button type="button" class="add-skill-button">Add Skill</button>
+                `;
+                skillsContainer.appendChild(newSkillForm);
+            }); 
+        });
+    </script>
+</body>
+</html>

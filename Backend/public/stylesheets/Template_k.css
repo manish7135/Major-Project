@@ -1,0 +1,59 @@
+/* public/stylesheets/Template_k.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%; /* Decreased width */
+    height: 600px; /* Increased height */
+    margin: auto;
+    background-color: #f3e5f5; /* light purple */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #6a1b9a; /* dark purple */
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 18px;
+    color: #9c27b0; /* medium purple */
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* section h2 {
+    font-size: 24px;
+    color: #6a1b9a; /* dark purple */
+    /* margin-bottom: 10px;
+} */ */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    color: #9c27b0; /* medium purple */
+    margin-bottom: 5px;
+}
+
+u {
+    text-decoration: none;
+}

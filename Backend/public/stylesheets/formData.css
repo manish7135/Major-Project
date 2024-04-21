@@ -1,0 +1,137 @@
+formData.css
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.main_container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    padding: 20px;
+}
+
+.inner {
+    margin-bottom: 20px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.group input,
+.group textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #555;
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+.group input:focus,
+.group textarea:focus {
+    outline: none;
+    border-bottom-color: #7e3af2;
+}
+
+.highlight {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7e3af2;
+    transform: translateY(-50%);
+    transition: width 0.3s;
+    z-index: -1;
+}
+
+.group input:focus + .highlight,
+.group textarea:focus + .highlight {
+    width: 100%;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.group input:focus ~ .bar::before,
+.group textarea:focus ~ .bar::before {
+    background-color: #7e3af2;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7e3af2;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #5f1a9d;
+}
+
+.add-skill-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #7e3af2;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.add-skill-button:hover {
+    background-color: #5f1a9d;
+}

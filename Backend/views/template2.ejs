@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="/stylesheets/Template_k.css">
+    <style>
+        .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e1bee7; /* light purple */
+    color: #9c27b0; /* medium purple */
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ce93d8; /* lighter shade of purple on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= formData.firstName %></h1>
+            <p>Web Developer</p>
+        </header>
+        <section id="contact">
+            <h2><u>
+                Contact Information </h2>
+            </u>
+            <ul>
+                <li>Email: <%= formData.email %></li>
+                <li>Phone:<%= formData.phone %></li>
+                <li>Address:<%= formData.country%>,<%= formData.city %> </li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2><u>
+                Education</h2>
+            </u>
+            <ul>
+                <li><%= formData.education %></li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2><u>
+                Work Experience</h2>
+            </u>
+            <ul>
+                <li><%= formData.education %></li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2><u>Skills</u></h2>
+            <ul>
+                <% formData.skills.forEach(skill => { %>
+                    <li><%= skill %></li>
+                <% }); %>
+            </ul>
+        </section>
+        
+    </div>
+    <div class="container">
+        <a class="button" type="submit" href="/download">Download</a>
+    </div>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="/stylesheets/Template_k.css">
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e1bee7; /* light purple */
+            color: #9c27b0; /* medium purple */
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ce93d8; /* lighter shade of purple on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= formData.firstName %></h1>
+            <p>Web Developer</p>
+        </header>
+        <section id="contact">
+            <h2><u>Contact Information</u></h2>
+            <ul>
+                <li>Email: <%= formData.Email %></li>
+                <li>Phone: <%= formData.phone %></li>
+                <li>Address: <%= formData.country %>, <%= formData.city %> </li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2><u>Education</u></h2>
+            <ul>
+                <li><%= formData.education %></li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2><u>Work Experience</u></h2>
+            <ul>
+                <li><%= formData.summary %></li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2><u>Skills</u></h2>
+            <ul>
+                <% skills.forEach(skill => { %>
+                    <li><%= skill %></li>
+                <% }); %>
+            </ul>
+        </section>
+        <%=console.log(formData)%>
+
+        
+    </div>
+    <div class="container">
+        <a class="button" type="submit" href="/download">Download</a>
+    </div>
+</body>
+</html>
